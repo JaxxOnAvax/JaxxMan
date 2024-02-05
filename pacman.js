@@ -22,7 +22,7 @@ var NONE        = 4,
     Pacman      = {};
 
 var logoImage = new Image();
-logoImage.src = 'logo.png';
+logoImage.src = 'jaxx.png';
 
 var ghostLogos = [];
 var ghostLogoSources = ['23095.png', '24478.png', '28382.png', '29015.png']; // Adjust paths to your logos
