@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="jaxxstyling.css" type="text/css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const copyButton = document.getElementById('copy');
+
+            copyButton.addEventListener('click', function () {
+                const textToCopy = document.getElementById('spanaddress').textContent;
+
+
+                const textarea = document.createElement('textarea');
+                textarea.value = textToCopy;
+
+                document.body.appendChild(textarea);
+                textarea.select();
+
+                document.execCommand('copy');
+
+                document.body.removeChild(textarea);
+            });
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const copyButton = document.getElementById('copy');
+
+            copyButton.addEventListener('click', function () {
+                const textToCopy = document.getElementById('spanaddress').textContent;
+
+                const textarea = document.createElement('textarea');
+                textarea.value = textToCopy;
+
+                document.body.appendChild(textarea);
+                textarea.select();
+
+                document.execCommand('copy');
+
+                document.body.removeChild(textarea);
+            });
+
+        });
+
+        $(document).ready(function () {
+
+            $("#playnow").click(function () {
+                $("#gameIframe").attr("src", "index.html"); // Change the src to load the actual content
+                $("#gamePopup").show(); // Optionally, show the popup if it's initially hidden
+            });
+
+            // Optionally, hide the popup when the "BACK TO HOME" button is clicked
+            $("#closeGameBtn").click(function () {
+                $("#gamePopup").hide();
+                $("#gameIframe").attr("src", ""); // Reset the src to prevent the iframe from reloading
+            });
+        });
+
+    </script>
+
+
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div id="navbar" class="mb-5 mt-4">
+                <div id="navbarResponsive" class="d-flex justify-content-between align-items-center">
+                    <div id="logoleft">
+                        <img alt="logojax" src="pngs/nombre-10.png" id="logojax">
+                        <img alt="logojax2" src="pngs/jaxx%20za%20levo%20gore%20so%20logoto-02.png" id="logojax2">
+                    </div>
+                    <div>
+                        <ul>
+                            <li class="nav-item-active px-1"><a href="#navbar">HOME</a></li>
+                            <li class="nav-item-active px-1"><a href="#jaxxAI">JAXX AI</a></li>
+                            <li class="nav-item-active px-1"><a href="#jaxxgame">JAXX GAME</a></li>
+                            <li class="nav-item-active px-1"><a href="#jaxxtokenimcs">TOKENOMICS</a></li>
+                            <li class="nav-item-active px-1"><a href=>JAXX NFT's</a></li>
+                            <li class="nav-item-active px-1"><a href=>JAXX DEX</a></li>
+                        </ul>
+                    </div>
+                    <div id="links">
+                        <img alt="link1" src="pngs/nombre-04.png" class="links">
+                        <img alt="link2" src="pngs/nombre-05.png" class="links">
+                        <img alt="link3" src="pngs/nombre-06.png" class="links">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7 text-center">
+            <div id="jaxxinfo" class="mt-5">
+                <div id="jaxxdescription" class="row pt-4">
+                    <div id="jaxx" class="col-md-6 text-center">
+                        <img alt="Jaxx" src="pngs/nombre-02.png" id="wolf2" class="pb-4">
+
+                        <p class="pb-4 text-start">Hi I am Jaxx and I will be the new star of the Avalanche Network. 
+                            My masters are training me right now but I am getting smarter by the second..</p>
+                        <div class="text-start">
+                            <button class="pt-1 buynow" id="buynowupper">BUY NOW</button>
+                            <button id="charts">CHARTS</button>
+                        </div>
+
+                    </div>
+                    <div id="jaxxlogo" class="col-md-6 mb-3">
+                        <img alt="Jaxx" src="pngs/nombre-03.png" id="game">
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="jaxxAI" class="text-center">
+                <div id="ai">
+                    <img alt="jax ai" src="pngs/nombre-12.png" id="jaxaiimg">
+                    <div class="mt-4">
+                        <img alt="gif" src="pngs/nombre-03.png" id="wolf">
+                        <h1 id="comingsoon">COMING SOON</h1>
+                    </div>
+                </div>
+
+            </div>
+            <div id="jaxxgame" class="text-center">
+                <img alt="game" src="pngs/nombre-13.png" id="jaxgameimg">
+                <div class="pt-4 text-center">
+                    <p>Enjoy the JAXX Game on both PC and Mobile,
+                        with future releases on App Store and Play Store.</p>
+                    <div id="gamediv">
+                        <img alt="game" src="pngs/nombre-26.png" id="game2">
+                    </div>
+                    <p id="taptoplay">Tap to play</p>
+                    <button id="playnow" class="pt-1">PLAY NOW</button>
+                </div>
+            </div>
+
+            <div id="gamePopup" class="modal" style="display: none;">
+                <div class="modal-dialog modal-dialog-centered" style="max-width: 600px;">
+                    <div class="modal-content">
+                        <!-- Modal Body -->
+                        <div class="modal-body text-center">
+                            <!-- Game iframe -->
+                            <iframe id="gameIframe" src="" width="100%" height="600px"></iframe>
+                        </div>
+                        <!-- Modal Footer -->
+                        <div class="modal-footer justify-content-center">
+                            <button type="button" id="closeGameBtn">BACK TO HOME</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="jaxxtokenimcs" class="text-center">
+                <img alt="tokenomics" src="pngs/nombre-14.png" id="jaxtokenomicsimg">
+                <p id="enjoygame">Enjoy the JAXX Game on both PC and Mobile,
+                    with future releases on App Store and Play Store.</p>
+                <p id="supply" class="pt-1 pb-2">TOTAL SUPPLY: <span id="numbers"
+                                                                     class="px-1 text-danger">999,999,999</span></p>
+                <div class="row justify-content-between">
+                    <div class="mb-5 d-flex flex-column align-items-start" id="symbol">
+
+                        <img alt="jaxsmall" src="pngs/nombre-10.png" id="jaxxsmalltopleft">
+
+
+                        <div class="d-flex flex-column mx-5 align-items-center" id="symbolandimg">
+
+                            <h6 class="px-4 text-center">SYMBOL</h6>
+
+
+                            <img alt="jaxsmall" src="pngs/png%20jaxx%20crveno-02.png" id="jaxxsmall"
+                                 class="align-self-center">
+                        </div>
+                    </div>
+
+
+                    <div class="mb-5" id="taxes">
+                        <h6 class="px-5 py-3"><span class="text-danger">NO</span> TAXES FOREVER</h6>
+                    </div>
+
+                    <div class="mb-5" id="burned">
+                        <h6 class="px-5 py-3"><span class="text-danger">BURNED</span> ENDLESSLY</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mb-5 text-start py-2 d-flex align-items-center" id="token">
+                        <img alt="token address" src="pngs/nombre-01.png" id="tokenaddress" class="mx-3">
+                        <div id="copydiv" class="justify-content-center">
+                            <img alt="copy" src="pngs/nombre-18.png" class="px-0 pb-4" id="copy">
+                            <p id="spanaddress">Jas23jiASDIJOIjdoijOIDJAO584IDJodaoDOOda7dg73hsk2C</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-9">
+            <div id="buynow" class="text-center justify-content-center align-items-center">
+                <div id="buynowinner" class="w-50 m-auto">
+                    <!--                    <img alt="buy now" src="pngs/nombre-16.png" id="jaxbuynowimg">-->
+                    <!--                    <p class="text-center">"You have the opportunity to acquire our cryptocurrency-->
+                    <!--                        through various platforms or exchanges, providing you-->
+                    <!--                        with the flexibility to make a purchase according to your-->
+                    <!--                        preferences and convenience."</p>-->
+                </div>
+                <img alt="logo2" src="pngs/nombre-10.png" id="wolfmedal">
+                <div id="jaxxx" class="mb-5 text-center">
+                    <img alt="jaxxlogo2" src="pngs/jaxx%20za%20levo%20gore%20so%20logoto-02.png" id="wolf3">
+                </div>
+                <button id="buynow2">BUY NOW</button>
+                <button id="charts2">CHARTS</button>
+                <div id="footer">
+                    <div id="footercontent" class="justify-content-between">
+                        <div id="contact">
+                            <img alt="logojax" src="pngs/nombre-10.png" id="logojax3">
+                            <p>contact@jaxx.com</p>
+                        </div>
+                        <div id="community">
+                            <p>Join our community!</p>
+                            <div id="contactimgs">
+                                <div id="telegram">
+                                    <a href="#"><img alt="jaxxlogo2" src="pngs/nombre-07.png" id="telegramimg"></a>
+                                </div>
+                                <div id="twitter">
+                                    <a href="#"><img alt="jaxxlogo2" src="pngs/nombre-08.png" id="twitterimg"></a>
+                                </div>
+                                <div id="discord">
+                                    <a href="#"><img alt="jaxxlogo2" src="pngs/nombre-09.png" id="discordimg"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <p id="copyright">Copyright 2024 | JAXX Coin | Privacy Policy</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
